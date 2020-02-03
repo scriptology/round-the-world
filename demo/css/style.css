@@ -25,10 +25,11 @@
 
 body {
 	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	color: #5d5c56;
-	background: #fff;
+	color: #fdfdfd;
+	background: #222;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: #222222;
 }
 
 a {
@@ -146,11 +147,11 @@ a:focus {
 	-webkit-align-items: center;
 	align-items: center;
 	height: 150vh;
-	margin: 0 0 3em;
+	margin: 0;
 	padding: 3em;
 	text-align: center;
-	color: #fff;
-	background: #181922;
+	color: #fdfdfd;
+	background: #222;
 }
 
 .intro blockquote {
@@ -295,7 +296,21 @@ a:focus {
 .text {
 	position: relative;
 	z-index: 1000;
-	padding: 5em 3em;
+	padding: 10em 3em 5em 3em;
+}
+.text:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgb(34,34,34);
+	background: linear-gradient(90deg, rgba(34,34,34,1) 65%, rgba(34,34,34,0.4500175070028011) 89%, rgba(34,34,34,0.0001) 100%);
+	width: 60%;
+	max-width: 1000px;
+	height: 100%;
+	padding-left: 0 3em;
+	z-index: -1;
 }
 
 .text section {
