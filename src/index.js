@@ -4,6 +4,6 @@ import CanvasMap from './canvas-map'
 let map=CanvasMap({
   textContainer:document.querySelector('.text'),
   mapSrc:'img/world_map_blank.svg',
-  trailVisitedColor:'#47DBB4',
-  fontPresentColor:'#5D5C56',
+  trailVisitedColor:'#ffeb43',
+  fontPresentColor:'#A2F4C5',
 }).appendTo('.container')

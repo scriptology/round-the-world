@@ -128,13 +128,13 @@ const CanvasMap=(props)=>{
         pointColor:null,
         pointRadius:null,
 
-        pointFutureColor:'#ccc',
+        pointFutureColor:'#46d4af',
         pointPresentColor:null,
         pointPastColor:null,
 
-        fontPastColor:'#666',
-        fontPresentColor:'#000',
-        fontFutureColor:'#aaa',
+        fontPastColor:'white',
+        fontPresentColor:'white',
+        fontFutureColor:'white',
       }
     },
     get trailColor(){
@@ -511,8 +511,8 @@ const CanvasMap=(props)=>{
             y:(radius+1)*Math.sin(angleOrigin)
           }
           let colorValue=imageVisibility*0.3
-          this.ctx.fillStyle=`rgba(220,220,202,${colorValue})`
-          setCompositeOperation(this.ctx,'darken','source-over')
+          this.ctx.fillStyle=`rgba(255,255,255,${colorValue})`
+          setCompositeOperation(this.ctx,'brighten','source-over')
 
           this.ctx.beginPath()
           this.ctx.moveTo(
@@ -532,7 +532,7 @@ const CanvasMap=(props)=>{
 
           this.ctx.beginPath()
           this.ctx.arc(origin.x,origin.y,radius,angleOrigin,angleOrigin+PI2)
-          //this.ctx.strokeStyle=`#aaa`
+          this.ctx.strokeStyle=`#aaa`
           // this.ctx.stroke()
           this.ctx.fill()
           setCompositeOperation(this.ctx)
@@ -628,7 +628,7 @@ const CanvasMap=(props)=>{
 
       let drawLabel=(point,i)=>{
         let fontSize=15
-        this.ctx.font=`${setByStatus(i,'normal','bold')} ${(setByStatus(i,fontSize,fontSize*1.2))}px Arial`
+        this.ctx.font=`${setByStatus(i,'normal','bold')} ${(setByStatus(i,fontSize,fontSize*1.2))}px Helvetica`
         this.ctx.textAlign='left'
         this.ctx.textBaseline='middle'
         this.ctx.fillStyle=setByStatus(i,
@@ -636,8 +636,8 @@ const CanvasMap=(props)=>{
           this.props.fontPresentColor,
           this.props.fontFutureColor
         )
-        this.ctx.strokeStyle='#FDFCEC'
-        this.ctx.lineWidth=6
+        this.ctx.strokeStyle='#172d4a'
+        this.ctx.lineWidth=2
         let pos=add(point,{x:20*inverseZoom,y:0})
         this.ctx.strokeText(point.label,...canvasPos(pos))
         this.ctx.fillText(point.label,...canvasPos(pos))
@@ -766,7 +766,7 @@ const CanvasMap=(props)=>{
 
       // Clear canvas
       // this.ctx.clearRect(0,0,this.canvas.width*dpi,this.canvas.height*dpi)
-      this.ctx.fillStyle='#fff'
+      this.ctx.fillStyle='#162d4a'
       this.ctx.fillRect(0,0,this.canvas.width*dpi,this.canvas.height*dpi)
 
       drawMap()
@@ -780,19 +780,19 @@ const CanvasMap=(props)=>{
 
       let blendWorks=setCompositeOperation(this.ctx,'screen')
 
-      let gradient=this.ctx.createLinearGradient(this.sectionsBounds[0].right,0,this.sectionsBounds[0].right+200,0)
-      if(blendWorks){
-        gradient.addColorStop(0,'rgba(185, 217, 151, 1)')
-        gradient.addColorStop(1,"rgba(185, 217, 151, 0)")
-      }else{
-        gradient.addColorStop(0,'rgba(255, 255, 255, 0.85)')
-        gradient.addColorStop(1,"rgba(255, 255, 255, 0)")
-      }
-      this.ctx.fillStyle=gradient
+      // let gradient=this.ctx.createLinearGradient(this.sectionsBounds[0].right,0,this.sectionsBounds[0].right+200,0)
+      // if(blendWorks){
+      //   gradient.addColorStop(0,'rgba(185, 217, 151, 1)')
+      //   gradient.addColorStop(1,"rgba(185, 217, 151, 0)")
+      // }else{
+      //   gradient.addColorStop(0,'rgba(255, 255, 255, 0.85)')
+      //   gradient.addColorStop(1,"rgba(255, 255, 255, 0)")
+      // }
+      // this.ctx.fillStyle=gradient
 
       // this.ctx.fillStyle='rgba(185, 217, 151, 1)'
 
-      this.ctx.fillRect(0,0,this.sectionsBounds[0].right+200,this.state.height)
+      // this.ctx.fillRect(0,0,this.sectionsBounds[0].right+200,this.state.height)
 
       if(blendWorks)
         setCompositeOperation(this.ctx)
