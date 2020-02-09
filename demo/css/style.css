@@ -29,7 +29,7 @@ body {
 	background: #222;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: #222222;
+	background: #162d4a;
 }
 
 a {
@@ -151,7 +151,7 @@ a:focus {
 	padding: 3em;
 	text-align: center;
 	color: #fdfdfd;
-	background: #222;
+	background: #162d4a;
 }
 
 .intro blockquote {
@@ -166,7 +166,7 @@ a:focus {
 .intro span {
 	display: block;
 	padding: 1em 0;
-	color: #464b4b;
+	color: #fff;
 }
 
 
@@ -304,8 +304,8 @@ a:focus {
 	position: absolute;
 	left: 0;
 	top: 0;
-	background: rgb(34,34,34);
-	background: linear-gradient(90deg, rgba(34,34,34,1) 65%, rgba(34,34,34,0.4500175070028011) 89%, rgba(34,34,34,0.0001) 100%);
+	background: rgb(22,45,74);
+	background: linear-gradient(90deg, rgba(22,45,74,1) 65%, rgba(22,45,74,0.4500175070028011) 89%, rgba(22,45,74,0.0001) 100%);
 	width: 60%;
 	max-width: 1000px;
 	height: 100%;
@@ -330,12 +330,12 @@ a:focus {
 }
 
 .title-up {
-	font-size: 0.365em;
+	font-size: 0.325em;
 	font-weight: bold;
 	display: block;
-	letter-spacing: 7px;
+	letter-spacing: 2px;
 	text-transform: uppercase;
-	color: #cecec5;
+	color: #ffeb43;
 }
 
 .title-down {
@@ -345,7 +345,7 @@ a:focus {
 	line-height: 0.9;
 	display: block;
 	padding: 0.15em 0 0.35em;
-	color: #5f646c;
+	color: #efefef;
 }
 
 .text figure {
@@ -361,7 +361,7 @@ a:focus {
 	font-style: italic;
 	padding: 1em 1.5em 0;
 	text-align: center;
-	color: #5f646c;
+	color: #efefef;
 }
 
 .text section p {
@@ -375,7 +375,7 @@ a:focus {
 	line-height: 1.5;
 	margin: 0.5em 0 1.25em;
 	text-align: left;
-	color: #9d9c95;
+	color: #efefef;
 }
 
 .text blockquote {
